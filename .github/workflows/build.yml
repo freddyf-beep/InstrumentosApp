@@ -34,7 +34,7 @@ jobs:
           CODE_SIGNING_ALLOWED=NO \
           CODE_SIGNING_REQUIRED=NO \
           CODE_SIGN_IDENTITY="" \
-          CODE_SIGN_STYLE=Manual
+          CODE_SIGN_STYLE=Manual > xcodebuild.log 2>&1 || (cat xcodebuild.log && exit 1)
 
     - name: Create Unsigned IPA Package
       run: |
