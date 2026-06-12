@@ -67,7 +67,7 @@ struct AssignInstrumentView: View {
                             .tint(.red)
                         }
                         .padding()
-                        .background(Color(.systemGray6))
+                        .background(Color(uiColor: .systemGray6))
                         .cornerRadius(12)
                     } else {
                         Text("Selecciona un estudiante de la lista de abajo para entregarle este instrumento.")
@@ -95,7 +95,7 @@ struct AssignInstrumentView: View {
                     }
                 }
                 .padding(10)
-                .background(Color(.systemGray6))
+                .background(Color(uiColor: .systemGray6))
                 .cornerRadius(10)
                 .padding(.horizontal)
                 .padding(.bottom, 10)

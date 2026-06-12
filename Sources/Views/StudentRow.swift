@@ -9,7 +9,7 @@ struct StudentRow: View {
             // Avatar / Icon
             ZStack {
                 Circle()
-                    .fill(Color(.systemGray6))
+                    .fill(Color(uiColor: .systemGray6))
                     .frame(width: 40, height: 40)
                 
                 Text(String(student.name.prefix(1)).uppercased())

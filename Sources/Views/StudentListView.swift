@@ -34,7 +34,7 @@ struct StudentListView: View {
                     }
                 }
                 .padding(10)
-                .background(Color(.systemGray6))
+                .background(Color(uiColor: .systemGray6))
                 .cornerRadius(10)
                 .padding(.horizontal)
                 .padding(.top, 8)

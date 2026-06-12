@@ -25,7 +25,7 @@ struct SettingsView: View {
                         .frame(height: 120)
                         .overlay(
                             RoundedRectangle(cornerRadius: 6)
-                                .stroke(Color(.systemGray4), lineWidth: 0.5)
+                                .stroke(Color(uiColor: .systemGray4), lineWidth: 0.5)
                         )
                         .padding(.vertical, 4)
                     
@@ -139,7 +139,7 @@ struct ExportPreviewView: View {
                         .font(.system(.body, design: .monospaced))
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color(.systemGray6))
+                        .background(Color(uiColor: .systemGray6))
                         .cornerRadius(10)
                         .padding(.horizontal)
                 }
