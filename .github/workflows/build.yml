@@ -1,0 +1,57 @@
+name: Build iOS IPA (Unsigned)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  build:
+    runs-on: macos-14
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Xcode version
+      run: |
+        sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+        xcodebuild -version
+
+    - name: Install XcodeGen
+      run: |
+        brew install xcodegen
+
+    - name: Generate Xcode Project
+      run: |
+        xcodegen generate
+
+    - name: Build Archive (Unsigned)
+      run: |
+        xcodebuild archive \
+          -project InstrumentosApp.xcodeproj \
+          -scheme InstrumentosApp \
+          -archivePath build/InstrumentosApp.xcarchive \
+          -sdk iphoneos \
+          -configuration Release \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGN_ENTITLEMENTS="" \
+          CODE_SIGN_IDENTITY=""
+
+    - name: Create Unsigned IPA Package
+      run: |
+        mkdir -p Payload
+        cp -r build/InstrumentosApp.xcarchive/Products/Applications/InstrumentosApp.app Payload/
+        zip -r InstrumentosApp.ipa Payload/
+        echo "IPA successfully created at InstrumentosApp.ipa"
+
+    - name: Upload IPA Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: InstrumentosApp-Unsigned-IPA
+        path: InstrumentosApp.ipa
+        if-no-files-found: error
+        retention-days: 7

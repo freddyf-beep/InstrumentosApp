@@ -1,0 +1,30 @@
+# Xcode
+#
+build/
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+*.xcscheme
+*.xschange
+.DS_Store
+xcuserdata/
+.orbit/
+.swiftpm/
+
+# User-specific files
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Swift Package Manager
+#
+.build/
+Packages/
+Package.pins
+Package.resolved
+
+# Fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Put them in a directory name "fastlane/screenshots" and add it to the .gitignore.
+# fastlane/screenshots
+# fastlane/test_output
