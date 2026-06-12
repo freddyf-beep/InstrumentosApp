@@ -47,8 +47,7 @@ struct StudentListView: View {
                             .font(.system(size: 64))
                             .foregroundColor(.secondary.opacity(0.7))
                         Text("No hay estudiantes registrados")
-                            .font(.title3)
-                            .fontWeight(.bold)
+                            .font(.title3.weight(.bold))
                             .foregroundColor(.secondary)
                         Text("Puedes añadir estudiantes manualmente con el botón + o pegando una lista masiva en la pestaña de Configuración.")
                             .font(.subheadline)
@@ -60,7 +59,7 @@ struct StudentListView: View {
                             isShowingAddSheet = true
                         } label: {
                             Text("Añadir Estudiante")
-                                .fontWeight(.semibold)
+                                .font(.body.weight(.semibold))
                         }
                         .buttonStyle(.borderedProminent)
                         .padding(.top, 8)
@@ -106,7 +105,7 @@ struct StudentListView: View {
                         isShowingAddSheet = true
                     } label: {
                         Image(systemName: "plus")
-                            .fontWeight(.bold)
+                            .font(.body.weight(.bold))
                     }
                 }
             }

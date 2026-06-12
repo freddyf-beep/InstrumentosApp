@@ -35,7 +35,7 @@ struct SettingsView: View {
                         HStack {
                             Spacer()
                             Label("Importar Estudiantes", systemImage: "person.3.fill")
-                                .fontWeight(.bold)
+                                .font(.body.weight(.bold))
                             Spacer()
                         }
                     }

@@ -20,8 +20,7 @@ struct StudentRow: View {
             // Name and instrument details
             VStack(alignment: .leading, spacing: 4) {
                 Text(student.name)
-                    .font(.body)
-                    .fontWeight(.medium)
+                    .font(.body.weight(.medium))
                     .foregroundColor(.primary)
                 
                 if let instrumentNum = assignedInstrument {
@@ -29,8 +28,7 @@ struct StudentRow: View {
                         Image(systemName: "music.note")
                             .font(.caption)
                         Text("Instrumento \(instrumentNum)")
-                            .font(.caption)
-                            .fontWeight(.medium)
+                            .font(.caption.weight(.medium))
                     }
                     .foregroundColor(.orange)
                 } else {
@@ -44,16 +42,14 @@ struct StudentRow: View {
             
             if assignedInstrument != nil {
                 Text("Ocupado")
-                    .font(.caption2)
-                    .fontWeight(.bold)
+                    .font(.caption2.weight(.bold))
                     .foregroundColor(.white)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
                     .background(Capsule().fill(Color.orange))
             } else {
                 Text("Libre")
-                    .font(.caption2)
-                    .fontWeight(.bold)
+                    .font(.caption2.weight(.bold))
                     .foregroundColor(.white)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)

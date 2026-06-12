@@ -34,8 +34,7 @@ struct AssignInstrumentView: View {
                         
                         // Status Badge
                         Text(currentAssignedStudent == nil ? "Disponible" : "Asignado")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
+                            .font(.subheadline.weight(.bold))
                             .foregroundColor(.white)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 6)
@@ -50,7 +49,7 @@ struct AssignInstrumentView: View {
                             Text("En posesión de: ")
                                 .foregroundColor(.secondary)
                             Text(currentStudent.name)
-                                .fontWeight(.semibold)
+                                .font(.body.weight(.semibold))
                                 .foregroundColor(.primary)
                             
                             Spacer()
@@ -60,7 +59,7 @@ struct AssignInstrumentView: View {
                                 dismiss()
                             } label: {
                                 Label("Liberar", systemImage: "xmark.circle")
-                                    .fontWeight(.bold)
+                                    .font(.body.weight(.bold))
                             }
                             .buttonStyle(.borderedProminent)
                             .controlSize(.small)
@@ -136,7 +135,7 @@ struct AssignInstrumentView: View {
                                         if currentAssignedStudent?.id == student.id {
                                             Image(systemName: "checkmark")
                                                 .foregroundColor(.accentColor)
-                                                .fontWeight(.bold)
+                                                .font(.body.weight(.bold))
                                         }
                                     }
                                 }

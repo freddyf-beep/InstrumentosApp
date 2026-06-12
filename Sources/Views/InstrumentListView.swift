@@ -16,8 +16,7 @@ struct InstrumentListView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
                             Text("Progreso de Entrega")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
+                                .font(.subheadline.weight(.semibold))
                                 .foregroundColor(.white.opacity(0.8))
                             Text("\(totalAssigned) de \(totalInstruments) Entregados")
                                 .font(.title)

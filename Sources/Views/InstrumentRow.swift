@@ -34,8 +34,7 @@ struct InstrumentRow: View {
                 
                 if let student = student {
                     Text(student.name)
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
+                        .font(.subheadline.weight(.semibold))
                         .foregroundColor(.amberDark)
                     
                     if let date = date {
