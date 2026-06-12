@@ -57,18 +57,32 @@ class AppState: ObservableObject {
     
     private func loadDefaultStudents() {
         let defaults = [
-            "Alejandro González",
-            "Sofía Rodríguez",
-            "Diego Muñoz",
-            "Valentina Silva",
-            "Matías Vera",
-            "Camila Tapia",
-            "Tomás Carrasco",
-            "Florencia Sepúlveda",
-            "Lucas Araya",
-            "Antonia Fuentes",
+            "Abigail Godoy",
+            "Aracely Barria",
             "Benjamín Flores",
-            "Martina Castro"
+            "Cristobal Guitierrez",
+            "Lucia Barria",
+            "Maite Gallegos",
+            "Mia Alvares",
+            "Rafaela Escobar",
+            "Carlos Toledo",
+            "Esperanza Coñapi",
+            "Gael Herrera",
+            "Ignacia Leal",
+            "Moises Jaiña",
+            "Samira Levican",
+            "Sofia Leuquen",
+            "Alonso Oyarzo",
+            "Bejamin Perez",
+            "Daimar Romero",
+            "Daryel Ruiz",
+            "Isabella Muñoz",
+            "Leonor Turra",
+            "Pia Zuñiga",
+            "Franco Cardenas",
+            "Javier Pardo",
+            "Jaster Matus",
+            "Lucas Muñoz"
         ]
         self.students = defaults.map { Student(name: $0) }.sorted { $0.name < $1.name }
     }
