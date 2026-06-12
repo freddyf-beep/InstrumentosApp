@@ -1,0 +1,18 @@
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild build -project InstrumentosApp.xcodeproj -scheme InstrumentosApp -configuration Release -destination generic/platform=iOS -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CODE_SIGN_STYLE=Manual
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/runner/work/InstrumentosApp/InstrumentosApp/build
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = 
+    CODE_SIGN_STYLE = Manual
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+
+2026-06-12 05:43:29.534 xcodebuild[19375:52140] Writing error result bundle to /var/folders/dq/2t71w9pd3jx50vh3kp15_dt40000gn/T/ResultBundle_2026-12-06_05-43-0029.xcresult
+xcodebuild: error: Unable to read project 'InstrumentosApp.xcodeproj'.
+	Reason: The project ‘InstrumentosApp’ cannot be opened because it is in a future Xcode project file format (77). Adjust the project format using a compatible version of Xcode to allow it to be opened by this version of Xcode.
+
+
