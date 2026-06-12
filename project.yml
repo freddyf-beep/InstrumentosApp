@@ -20,3 +20,7 @@ targets:
       PRODUCT_BUNDLE_IDENTIFIER: com.fredd.InstrumentosApp
       INFOPLIST_FILE: Sources/Info.plist
       GENERATE_INFOPLIST_FILE: NO
+      CODE_SIGNING_ALLOWED: NO
+      CODE_SIGNING_REQUIRED: NO
+      CODE_SIGN_STYLE: Manual
+      CODE_SIGN_IDENTITY: ""
