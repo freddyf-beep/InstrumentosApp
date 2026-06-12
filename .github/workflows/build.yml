@@ -23,26 +23,23 @@ jobs:
       run: |
         xcodegen generate
 
-    - name: Build Archive (Unsigned)
+    - name: Build App (Unsigned)
       run: |
-        xcodebuild archive \
+        xcodebuild build \
           -project InstrumentosApp.xcodeproj \
           -scheme InstrumentosApp \
-          -archivePath build/InstrumentosApp.xcarchive \
-          -sdk iphoneos \
           -configuration Release \
+          -destination 'generic/platform=iOS' \
+          -derivedDataPath build \
           CODE_SIGNING_ALLOWED=NO \
           CODE_SIGNING_REQUIRED=NO \
-          CODE_SIGN_ENTITLEMENTS="" \
           CODE_SIGN_IDENTITY="" \
-          CODE_SIGN_STYLE=Manual \
-          PROVISIONING_PROFILE="" \
-          PROVISIONING_PROFILE_SPECIFIER=""
+          CODE_SIGN_STYLE=Manual
 
     - name: Create Unsigned IPA Package
       run: |
         mkdir -p Payload
-        cp -r build/InstrumentosApp.xcarchive/Products/Applications/InstrumentosApp.app Payload/
+        cp -r build/Build/Products/Release-iphoneos/InstrumentosApp.app Payload/
         zip -r InstrumentosApp.ipa Payload/
         echo "IPA successfully created at InstrumentosApp.ipa"
 
