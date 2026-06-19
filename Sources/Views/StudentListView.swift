@@ -92,7 +92,7 @@ struct StudentListView: View {
                                         Label("Eliminar", systemImage: "trash")
                                     }
                                 }
-                            }
+                            .onDelete(perform: deleteStudent)
                         }
                     }
                     .listStyle(.insetGrouped)
@@ -100,6 +100,9 @@ struct StudentListView: View {
             }
             .navigationTitle("Estudiantes")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button {
                         isShowingAddSheet = true
@@ -139,6 +142,13 @@ struct StudentListView: View {
                     }
                 }
             }
+        }
+    }
+
+    private func deleteStudent(at offsets: IndexSet) {
+        for index in offsets {
+            let student = filteredStudents[index]
+            appState.deleteStudent(student)
         }
     }
 }
