@@ -92,6 +92,7 @@ struct StudentListView: View {
                                         Label("Eliminar", systemImage: "trash")
                                     }
                                 }
+                            }
                             .onDelete(perform: deleteStudent)
                         }
                     }
